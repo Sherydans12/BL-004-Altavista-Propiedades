@@ -43,11 +43,11 @@ export default function ContactoPage() {
 
     try {
       const response = await submitContactLead({
-        name,
-        email,
-        phone,
-        subject,
-        message,
+        name: name.trim(),
+        email: email.trim(),
+        phone: phone.trim(),
+        subject: subject.trim(),
+        message: message.trim(),
         preferredContactMethod
       });
 

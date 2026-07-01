@@ -48,12 +48,12 @@ export default function OwnerLeadForm() {
 
     try {
       const response = await submitOwnerLead({
-        name,
-        email,
-        phone,
+        name: name.trim(),
+        email: email.trim(),
+        phone: phone.trim(),
         operationIntent,
-        propertyType,
-        propertyComuna,
+        propertyType: propertyType.trim(),
+        propertyComuna: propertyComuna.trim(),
         propertyAddress: propertyAddress.trim() || undefined,
         estimatedPrice: estimatedPrice ? Number(estimatedPrice) : undefined,
         message: message.trim() || undefined,
