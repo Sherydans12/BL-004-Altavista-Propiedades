@@ -13,6 +13,8 @@ import {
   AlertCircle
 } from 'lucide-react';
 
+import { submitContactLead } from '@/lib/inmodesk-api';
+
 export default function ContactoPage() {
   // Form State
   const [name, setName] = useState('');
@@ -20,32 +22,54 @@ export default function ContactoPage() {
   const [phone, setPhone] = useState('');
   const [subject, setSubject] = useState('general');
   const [message, setMessage] = useState('');
+  const [preferredContactMethod, setPreferredContactMethod] = useState<'telefono' | 'email' | 'whatsapp'>('whatsapp');
 
   // Status State
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!name.trim() || !email.trim() || !phone.trim() || !message.trim()) {
       setSubmitStatus('error');
+      setErrorMessage('Por favor, completa todos los campos obligatorios.');
       return;
     }
 
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    // Simulate submission
-    setTimeout(() => {
+    try {
+      const response = await submitContactLead({
+        name,
+        email,
+        phone,
+        subject,
+        message,
+        preferredContactMethod
+      });
+
+      if (response.success) {
+        setSubmitStatus('success');
+        // Clear fields
+        setName('');
+        setEmail('');
+        setPhone('');
+        setSubject('general');
+        setMessage('');
+        setPreferredContactMethod('whatsapp');
+      } else {
+        setSubmitStatus('error');
+        setErrorMessage(response.error || 'Ocurrió un error al enviar el formulario.');
+      }
+    } catch {
+      setSubmitStatus('error');
+      setErrorMessage('Error de conexión con el servidor. Por favor intenta de nuevo.');
+    } finally {
       setIsSubmitting(false);
-      setSubmitStatus('success');
-      // Clear fields
-      setName('');
-      setEmail('');
-      setPhone('');
-      setMessage('');
-    }, 1200);
+    }
   };
 
   return (
@@ -158,7 +182,7 @@ export default function ContactoPage() {
               Enviar un Mensaje
             </h2>
 
-            {/* Success Alert */}
+             {/* Success Alert */}
             {submitStatus === 'success' && (
               <div className="mb-6 p-4 bg-teal-50 border border-teal-200 rounded-2xl text-teal-900 space-y-2">
                 <div className="flex items-center space-x-2 text-teal-800">
@@ -166,7 +190,7 @@ export default function ContactoPage() {
                   <strong className="text-sm">¡Mensaje enviado con éxito!</strong>
                 </div>
                 <p className="text-xs font-light">
-                  Gracias por escribirnos. Tu consulta ha sido registrada y un asesor te responderá a la brevedad.
+                  Tu consulta fue recibida. Un asesor de Altavista te contactará pronto.
                 </p>
               </div>
             )}
@@ -176,7 +200,7 @@ export default function ContactoPage() {
               <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-2xl text-red-950 flex items-center gap-2">
                 <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
                 <span className="text-xs font-light">
-                  Por favor, completa todos los campos obligatorios antes de enviar.
+                  {errorMessage || 'Por favor, completa todos los campos obligatorios antes de enviar.'}
                 </span>
               </div>
             )}
@@ -218,7 +242,7 @@ export default function ContactoPage() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {/* Phone */}
                 <div>
                   <label htmlFor="phone" className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
@@ -250,6 +274,23 @@ export default function ContactoPage() {
                     <option value="publicar">Quiero Publicar una Propiedad</option>
                     <option value="visita">Coordinar una Visita</option>
                     <option value="otro">Otro Motivo</option>
+                  </select>
+                </div>
+
+                {/* Preferred Contact Method */}
+                <div>
+                  <label htmlFor="preferredContactMethod" className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+                    Método Preferido *
+                  </label>
+                  <select
+                    id="preferredContactMethod"
+                    value={preferredContactMethod}
+                    onChange={(e) => setPreferredContactMethod(e.target.value as 'telefono' | 'email' | 'whatsapp')}
+                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:bg-white focus:ring-1 focus:ring-teal-700 focus:border-transparent outline-none transition-all"
+                  >
+                    <option value="whatsapp">WhatsApp</option>
+                    <option value="telefono">Teléfono</option>
+                    <option value="email">Email</option>
                   </select>
                 </div>
               </div>

@@ -21,12 +21,11 @@ Este sitio consume la API pública del repo BL-004-InmoDesk:
 
 ### Conectado Realmente:
 * **Catálogo de Propiedades (`/propiedades`)**: Consulta dinámicamente el listado de propiedades publicadas directamente de la base de datos local de InmoDesk.
-* **Detalle de Propiedad (`/propiedades/[slug]`)**: Resuelve la propiedad por su slug de forma dinámica contra el CRM.
-* **Formulario de Interés (Leads)**: Al completar el formulario de contacto en el detalle de una propiedad, el payload se envía vía POST a InmoDesk, guardándolo en la base de datos del CRM (`db.json`) y asociando el lead a la propiedad correcta en estado `nuevo`.
+* **Detalle de Propiedad (`/propiedades/[slug]`)**: Resuelve la propiedad por su slug de forma dinámica contra el CRM y permite enviar leads reales por propiedad (asociados por `propertySlug`).
+* **Formulario de Contacto General (`/contacto`)**: Envía leads de consulta general vía POST a InmoDesk (`POST /api/public/demo/contact-leads`).
+* **Formulario de Captación de Propietarios (`/publica-con-nosotros`)**: Envía solicitudes reales de propietarios vía POST a InmoDesk (`POST /api/public/demo/owner-leads`) para registrar captaciones en el CRM.
 
-### Simulado / En el Cliente:
-* **Formulario de Publicación (`/publica-con-nosotros`)**: El formulario para captar nuevos propietarios se procesa en el cliente y muestra un mensaje de éxito simulado, ya que el CRM de InmoDesk no expone actualmente un endpoint público de registro de propietarios.
-* **Formulario de Contacto General (`/contacto`)**: Simula el envío exitoso de la consulta al cliente.
+### Comportamiento del Cliente:
 * **Modo Offline**: Si el servidor de InmoDesk no está encendido o devuelve un error, el portal de Altavista entra automáticamente en modo resiliente. Despliega un badge indicativo en la Navbar (*"Usando datos de respaldo offline"*) y carga la información local desde `src/lib/fallback-data.ts`. El envío de leads en este modo notificará al usuario el fallo de conexión con el servidor.
 
 ---

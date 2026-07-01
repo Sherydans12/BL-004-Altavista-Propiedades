@@ -80,16 +80,34 @@ Sigue esta secuencia para demostrar el valor integrado del ecosistema:
    * Navega a la pestaña de **Leads** para mostrar que el contacto ingresó en tiempo real con su nombre, correo, teléfono e información de interés, y que está enlazado a la propiedad correcta.
    * Navega a la pestaña de **Pipeline** y destaca cómo el lead se posicionó automáticamente en la etapa de *Nuevo* dentro del tablero Kanban comercial, listo para iniciar la gestión de corretaje.
 
+### Flujo adicional — Consulta general
+
+1. Ir a `/contacto`.
+2. Completar el formulario (Nombre, Email, Teléfono, Asunto/Motivo, Mensaje, Método preferido de contacto).
+3. Enviar.
+4. Volver al panel de administración de **InmoDesk** (`http://localhost:3000`).
+5. Confirmar que el lead ingresó y aparece como "Contacto general" (o con la información correspondiente) en la pestaña **Leads**.
+6. Confirmar que aparece en la columna *Nuevo* del **Pipeline**.
+
+### Flujo adicional — Captación de propietario
+
+1. Ir a `/publica-con-nosotros`.
+2. Completar el formulario con los datos de tu propiedad (Nombre, Email, Teléfono, Qué quiere hacer, Tipo de propiedad, Comuna, Dirección/Sector, Precio estimado, Mensaje, Método preferido).
+3. Enviar.
+4. Volver al panel de administración de **InmoDesk** (`http://localhost:3000`).
+5. Confirmar que la solicitud de propietario ingresó y aparece como "Propietario" o "Captación propietario" en la pestaña **Leads**.
+6. Confirmar que aparece en la columna *Nuevo* del **Pipeline**.
+
 ---
 
 ## 5. Riesgos Conocidos y Mitigaciones
 
 * **Conflicto de Puertos**: Si el puerto `3000` está ocupado por otra aplicación al iniciar InmoDesk, Next.js se levantará automáticamente en otro puerto libre (ej. `3002`). Si esto ocurre, Altavista no se conectará y usará fallback offline.
   * *Solución:* Asegúrate de apagar cualquier proceso en el puerto `3000` antes de iniciar la demo. Puedes matar procesos en puerto 3000 con `Stop-Process -Id <PID>` o usando PowerShell.
-* **API InmoDesk Desconectada**: Si InmoDesk se cae, Altavista muestra las propiedades simuladas de `src/lib/fallback-data.ts`. La interfaz sigue luciendo premium, pero el envío de formularios de propiedades arrojará un error de conexión.
+* **API InmoDesk Desconectada**: Si InmoDesk se cae, Altavista muestra las propiedades simuladas de `src/lib/fallback-data.ts`. La interfaz sigue luciendo premium, pero el envío de formularios arrojará un error de conexión.
   * *Solución:* Sigue el checklist previo a la reunión para garantizar que ambos servidores estén activos.
-* **Formularios de Contacto General y Captación**: Los formularios en `/contacto` y `/publica-con-nosotros` son simulaciones visuales que no se persisten en base de datos.
-  * *Solución:* Enfoca la demostración del flujo integrado en el formulario de interés de la ficha técnica de propiedades (`/propiedades/[slug]`), que sí está completamente conectado.
+* **Dependencia de la API Local**: Los formularios de contacto, captación y leads por propiedad dependen de que InmoDesk esté corriendo activamente en `localhost:3000`.
+  * *Solución:* Realiza el checklist de control previo antes de comenzar la reunión comercial.
 
 ---
 

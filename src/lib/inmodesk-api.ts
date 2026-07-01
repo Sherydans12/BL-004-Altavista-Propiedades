@@ -1,4 +1,5 @@
 import { Property, LeadInput } from '@/types/property';
+import { ContactLeadPayload, OwnerLeadPayload } from '@/types/leads';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_INMODESK_API_BASE_URL || 'http://localhost:3000';
 
@@ -51,3 +52,51 @@ export async function submitLead(lead: LeadInput): Promise<{ success: boolean; e
     return { success: false, error: errMessage };
   }
 }
+
+export async function submitContactLead(payload: ContactLeadPayload): Promise<{ success: boolean; error?: string }> {
+  try {
+    const res = await fetch(`${API_BASE_URL}/api/public/demo/contact-leads`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await res.json();
+    if (!res.ok) {
+      return { success: false, error: data.error || 'Ocurrió un error al enviar el formulario.' };
+    }
+    return { success: true };
+  } catch (error) {
+    const errMessage = error instanceof Error ? error.message : 'Error de conexión con el servidor.';
+    return { success: false, error: errMessage };
+  }
+}
+
+export async function submitOwnerLead(payload: OwnerLeadPayload): Promise<{ success: boolean; error?: string }> {
+  try {
+    const res = await fetch(`${API_BASE_URL}/api/public/demo/owner-leads`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await res.json();
+    if (!res.ok) {
+      return { success: false, error: data.error || 'Ocurrió un error al enviar el formulario.' };
+    }
+    return { success: true };
+  } catch (error) {
+    const errMessage = error instanceof Error ? error.message : 'Error de conexión con el servidor.';
+    return { success: false, error: errMessage };
+  }
+}
+
+// Aliases for compatibility and prompt compliance
+export const getProperties = fetchProperties;
+export const getPropertyBySlug = fetchPropertyBySlug;
+export const submitPropertyLead = submitLead;
+

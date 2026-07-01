@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { 
   Building2, 
   Camera, 
@@ -7,9 +6,9 @@ import {
   CalendarDays, 
   Scale, 
   CheckCircle2, 
-  MessageSquare, 
   ArrowRight 
 } from 'lucide-react';
+import OwnerLeadForm from '@/components/forms/OwnerLeadForm';
 
 export const metadata = {
   title: 'Publica tu Propiedad | Altavista Propiedades',
@@ -64,13 +63,13 @@ export default function PublicaConNosotrosPage() {
               En Altavista Propiedades transformamos el corretaje tradicional en una experiencia premium libre de estrés. Descubre por qué cientos de propietarios confían en nosotros.
             </p>
             <div className="pt-2">
-              <Link
-                href="/contacto?subject=publicar"
+              <a
+                href="#form-publicar"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm shadow-md transition-all hover:scale-[1.02] cursor-pointer"
               >
                 Comenzar Evaluación Gratis
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -148,29 +147,9 @@ export default function PublicaConNosotrosPage() {
           </div>
         </section>
 
-        {/* Bottom CTA Block */}
-        <section className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 text-center mt-16 max-w-4xl mx-auto space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold">¿Listo para comenzar a publicar?</h2>
-          <p className="text-slate-400 font-light max-w-md mx-auto text-sm">
-            Completa nuestro formulario de contacto o llámanos directamente. Estaremos felices de asesorarte de forma gratuita y sin compromisos.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-            <Link
-              href="/contacto"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-semibold text-sm transition-all cursor-pointer"
-            >
-              <MessageSquare className="w-4 h-4 mr-2" />
-              Formulario de Contacto
-            </Link>
-            <a
-              href="https://wa.me/56987654321?text=Hola,%20me%20gustaría%20publicar%20mi%20propiedad%20con%20ustedes."
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold text-sm transition-all"
-            >
-              Conversar por WhatsApp
-            </a>
-          </div>
+        {/* Lead Capture Form Section */}
+        <section id="form-publicar" className="mt-16 scroll-mt-20">
+          <OwnerLeadForm />
         </section>
 
       </div>
