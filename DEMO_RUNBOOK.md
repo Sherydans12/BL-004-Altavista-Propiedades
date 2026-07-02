@@ -111,10 +111,32 @@ Sigue esta secuencia para demostrar el valor integrado del ecosistema:
 
 ---
 
-## 6. Checklist de Control (Antes de Empezar)
+## 6. Checklist de Control (Antes de Empezar - Local)
 
 * [ ] InmoDesk iniciado y escuchando activamente en `http://localhost:3000`.
 * [ ] Altavista Propiedades iniciado y escuchando en `http://localhost:3005`.
 * [ ] El endpoint `http://localhost:3000/api/public/demo/properties` responde con JSON.
 * [ ] El Navbar de Altavista muestra el indicador verde **"InmoDesk API Live"** (sin banners de advertencia de offline).
 * [ ] Se realiza una prueba previa de envío de lead en Altavista y se confirma su aparición en el tablero Pipeline de InmoDesk.
+
+---
+
+## 7. Despliegue y Checklist de Control en Producción (Coolify)
+
+Para validar el ecosistema en producción (desplegado en Coolify):
+
+### Direcciones de Producción:
+* **InmoDesk producción:** [https://inmodesk-demo.baselogic.cl](https://inmodesk-demo.baselogic.cl)
+* **Altavista producción:** [https://altavista-demo.baselogic.cl](https://altavista-demo.baselogic.cl)
+
+### Checklist de Validación en Producción:
+* [ ] 1. Abrir **Altavista producción** (`https://altavista-demo.baselogic.cl`).
+* [ ] 2. Ir a `/propiedades`.
+* [ ] 3. Confirmar que carga propiedades desde **InmoDesk producción** (Navbar indica **"InmoDesk API Live"**).
+* [ ] 4. Abrir el detalle de una propiedad.
+* [ ] 5. Enviar un lead por propiedad a través del formulario de contacto.
+* [ ] 6. Iniciar sesión en **InmoDesk producción** e ir a la sección **Leads** para confirmar que el lead se registró correctamente.
+* [ ] 7. Ir a la sección **Pipeline** en InmoDesk producción y confirmar que el lead aparece en la etapa *Nuevo* en el tablero Kanban.
+* [ ] 8. Probar el formulario de contacto general en `/contacto` y verificar que el lead correspondiente se registre en InmoDesk.
+* [ ] 9. Probar el formulario de captación de propietarios en `/publica-con-nosotros` y verificar que el lead correspondiente se registre en InmoDesk.
+

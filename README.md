@@ -45,9 +45,11 @@ Este sitio consume la API pública del repo BL-004-InmoDesk:
 Para conectar el sitio con InmoDesk, debes configurar la URL base de la API. Crea un archivo `.env` o `.env.local` en la raíz del proyecto basándote en `.env.example`:
 
 ```env
-# URL base del Admin Panel / API pública de BL-004 InmoDesk
-# En demo local normalmente debe quedar en http://localhost:3000
-NEXT_PUBLIC_INMODESK_API_BASE_URL=http://localhost:3000
+# Local:
+# NEXT_PUBLIC_INMODESK_API_BASE_URL=http://localhost:3000
+
+# Producción demo:
+NEXT_PUBLIC_INMODESK_API_BASE_URL=https://inmodesk-demo.baselogic.cl
 ```
 
 *Nota: Si no se define esta variable, la aplicación asume por defecto `http://localhost:3000`.*
@@ -69,3 +71,15 @@ NEXT_PUBLIC_INMODESK_API_BASE_URL=http://localhost:3000
 
 3. **Verificación en el navegador**:
    Abre [http://localhost:3005](http://localhost:3005) para acceder a la web de Altavista Propiedades.
+
+---
+
+## Despliegue en Producción (Coolify)
+
+Este portal público está configurado para desplegarse de manera automatizada en Coolify utilizando un Dockerfile optimizado.
+
+* **Altavista en producción (Demo):** [https://altavista-demo.baselogic.cl](https://altavista-demo.baselogic.cl)
+* **InmoDesk API en producción (Demo):** [https://inmodesk-demo.baselogic.cl](https://inmodesk-demo.baselogic.cl)
+
+Para más detalles técnicos sobre el despliegue en Coolify, consulta la guía paso a paso en [COOLIFY_DEPLOY.md](file:///c:/Users/nicol/Documents/BL-004-Altavista-Propiedades/COOLIFY_DEPLOY.md).
+
