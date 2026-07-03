@@ -55,7 +55,7 @@ graph TD
 ### Minuto 0:05 - 0:06 | 6. Tablero Kanban (Pipeline)
 *   **Acción:** Ir a la pestaña **Pipeline** en InmoDesk. Mostrar la tarjeta de Clara en la columna *Nuevo*. Moverla brevemente a *Contacto Establecido* o *Visita Coordinada*.
 *   **Discurso:**
-    > "**(Frase Clave)** Esto no es solo una página web inmobiliaria. Es una experiencia pública conectada a un panel de gestión comercial, donde cada consulta entra automáticamente como lead y puede ser gestionada por el equipo. Como ven en el Pipeline comercial, Clara ya tiene una tarjeta en la etapa 'Nuevo'. Desde aquí, el agente asignado puede arrastrar la oportunidad a través de las distintas fases de venta (Contacto, Visita, Oferta, Cierre) asegurando un control absoluto del embudo de conversión."
+     > "**(Frase Clave)** Esto no es solo una página web inmobiliaria. Es una experiencia pública conectada a un panel de gestión comercial, donde cada consulta entra automáticamente como lead y puede ser gestionada por el equipo. Como ven en el Pipeline comercial, Clara ya tiene una tarjeta en la etapa 'Nuevo'. Desde aquí, el agente asignado puede gestionar la oportunidad dentro del pipeline y avanzar su estado según el proceso comercial, asegurando un control absoluto del embudo de conversión."
 
 ### Minuto 0:06 - 0:06:30 | 7. Captación de Propietario e Inquietudes Generales
 *   **Acción:** Regresar brevemente a Altavista e ir a `/publica-con-nosotros` o `/contacto`. Mostrar el formulario de captación detallando que funciona bajo la misma lógica.
@@ -88,7 +88,7 @@ Para mantener expectativas realistas y proteger el alcance de esta fase de desar
 > **Respuesta:** "Sí, esa es la funcionalidad principal. A través del módulo de administración de InmoDesk, tu equipo puede crear, editar, pausar o archivar propiedades mediante un formulario sencillo. Los cambios impactarán el portal público al instante."
 
 ### 3. ¿Los leads quedan guardados?
-> **Respuesta:** "Sí, todos los leads quedan registrados de forma permanente en la base de datos de InmoDesk. Aunque los elimines del Pipeline visual, se mantiene un historial de contactos y solicitudes para futuras campañas de marketing o auditoría de datos."
+> **Respuesta:** "Los leads quedan registrados en el panel comercial y pueden ser gestionados por el equipo. Para una operación productiva real, la persistencia puede migrarse a PostgreSQL u otra base de datos robusta."
 
 ### 4. ¿Se puede conectar a WhatsApp?
 > **Respuesta:** "Sí. Actualmente contamos con una conexión directa que levanta la aplicación de WhatsApp con un mensaje estructurado con el nombre y ubicación de la propiedad. En fases posteriores, se puede integrar con proveedores oficiales de la API de WhatsApp para centralizar los chats dentro del panel."

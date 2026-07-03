@@ -20,7 +20,7 @@ Esta lista de chequeo debe ser completada **30 minutos antes** de cada demostrac
 - [ ] **Flujo 1: Lead por Propiedad Específica**
   - Entrar al detalle de una propiedad, rellenar el formulario lateral de interés con datos ficticios (ej: `test-lead@altavista.cl`).
   - Hacer clic en enviar. Verificar banner de éxito: *"¡Mensaje enviado con éxito! Tu consulta fue recibida. Un asesor de Altavista te contactará pronto."*
-  - Ir a InmoDesk (`https://inmodesk-demo.baselogic.cl/admin`), autenticarse y verificar en la sección **Leads** y **Pipeline** que el lead ingresó en tiempo real y está asociado a la propiedad correcta.
+  - Ir a InmoDesk (`https://inmodesk-demo.baselogic.cl`), autenticarse y verificar en la sección **Leads** y **Pipeline** que el lead ingresó en tiempo real y está asociado a la propiedad correcta.
 - [ ] **Flujo 2: Contacto General**
   - Ir a `/contacto`, llenar el formulario de contacto y enviarlo.
   - Verificar banner de éxito: *"Tu consulta fue recibida. Un asesor de Altavista te contactará pronto."*
