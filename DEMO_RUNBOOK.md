@@ -57,7 +57,11 @@ Desde la carpeta raíz del proyecto **BL-004-Altavista-Propiedades**:
 Antes de iniciar la reunión, corrobora la conectividad haciendo las siguientes consultas rápidas:
 
 1. **Prueba API Directa**: Abre [http://localhost:3000/api/public/demo/properties](http://localhost:3000/api/public/demo/properties) en tu navegador. Debe devolver un arreglo JSON con las propiedades activas.
-2. **Prueba del Portal**: Abre [http://localhost:3005/propiedades](http://localhost:3005/propiedades). En la cabecera (Navbar) debe aparecer un badge verde indicando **"InmoDesk API Live"**. Si se visualiza el banner *"InmoDesk API offline / Usando datos de respaldo offline"*, significa que Altavista no está logrando establecer contacto con la dirección configurada en las variables de entorno.
+2. **Prueba del Portal**: Abre [http://localhost:3005/propiedades](http://localhost:3005/propiedades). Debe cargar el catálogo desde InmoDesk. Si se visualiza el aviso *"Mostrando catálogo referencial"*, significa que Altavista no está logrando establecer contacto con la dirección configurada en las variables de entorno.
+
+## Dirección visual
+
+La demo pública usa una identidad boutique/editorial con paleta cálida, fondos profundos y componentes menos genéricos para diferenciarse de landings inmobiliarias tradicionales.
 
 ---
 
@@ -69,7 +73,7 @@ Sigue esta secuencia para demostrar el valor integrado del ecosistema:
    * Entra a [http://localhost:3000](http://localhost:3000), inicia sesión con las credenciales demo.
    * Ve a la sección **Propiedades**. Identifica una propiedad publicada (por ejemplo: *"Moderna Casa en San Damián"*). Explicar al cliente cómo se administra el portafolio de manera interna.
 2. **Navegar en Altavista**:
-   * Abre [http://localhost:3005](http://localhost:3005) y destaca la estética de lujo del sitio público.
+   * Abre [http://localhost:3005](http://localhost:3005) y destaca la estética boutique/editorial del sitio público: hero profundo, paleta cálida, fotografía protagonista y formularios premium.
    * Haz clic en **Propiedades** para cargar el catálogo.
 3. **Generar un Lead**:
    * Entra al detalle de la propiedad *"Moderna Casa en San Damián"* (`/propiedades/casa-moderna-las-condes-san-damian`).
@@ -116,7 +120,7 @@ Sigue esta secuencia para demostrar el valor integrado del ecosistema:
 * [ ] InmoDesk iniciado y escuchando activamente en `http://localhost:3000`.
 * [ ] Altavista Propiedades iniciado y escuchando en `http://localhost:3005`.
 * [ ] El endpoint `http://localhost:3000/api/public/demo/properties` responde con JSON.
-* [ ] El Navbar de Altavista muestra el indicador verde **"InmoDesk API Live"** (sin banners de advertencia de offline).
+* [ ] Altavista carga propiedades reales sin mostrar el aviso **"Mostrando catálogo referencial"**.
 * [ ] Se realiza una prueba previa de envío de lead en Altavista y se confirma su aparición en el tablero Pipeline de InmoDesk.
 
 ---
@@ -132,11 +136,10 @@ Para validar el ecosistema en producción (desplegado en Coolify):
 ### Checklist de Validación en Producción:
 * [ ] 1. Abrir **Altavista producción** (`https://altavista-demo.baselogic.cl`).
 * [ ] 2. Ir a `/propiedades`.
-* [ ] 3. Confirmar que carga propiedades desde **InmoDesk producción** (Navbar indica **"InmoDesk API Live"**).
+* [ ] 3. Confirmar que carga propiedades desde **InmoDesk producción** sin mostrar el aviso de catálogo referencial.
 * [ ] 4. Abrir el detalle de una propiedad.
 * [ ] 5. Enviar un lead por propiedad a través del formulario de contacto.
 * [ ] 6. Iniciar sesión en **InmoDesk producción** e ir a la sección **Leads** para confirmar que el lead se registró correctamente.
 * [ ] 7. Ir a la sección **Pipeline** en InmoDesk producción y confirmar que el lead aparece en la etapa *Nuevo* en el tablero Kanban.
 * [ ] 8. Probar el formulario de contacto general en `/contacto` y verificar que el lead correspondiente se registre en InmoDesk.
 * [ ] 9. Probar el formulario de captación de propietarios en `/publica-con-nosotros` y verificar que el lead correspondiente se registre en InmoDesk.
-

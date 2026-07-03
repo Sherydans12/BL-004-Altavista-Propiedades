@@ -17,6 +17,12 @@ Este sitio consume la API pública del repo BL-004-InmoDesk:
 
 ---
 
+## Dirección visual
+
+La demo pública usa una identidad boutique/editorial con paleta cálida, fondos profundos y componentes menos genéricos para diferenciarse de landings inmobiliarias tradicionales.
+
+---
+
 ## Estado de la Integración
 
 ### Conectado Realmente:
@@ -82,4 +88,3 @@ Este portal público está configurado para desplegarse de manera automatizada e
 * **InmoDesk API en producción (Demo):** [https://inmodesk-demo.baselogic.cl](https://inmodesk-demo.baselogic.cl)
 
 Para más detalles técnicos sobre el despliegue en Coolify, consulta la guía paso a paso en [COOLIFY_DEPLOY.md](file:///c:/Users/nicol/Documents/BL-004-Altavista-Propiedades/COOLIFY_DEPLOY.md).
-

@@ -9,6 +9,11 @@ Demostrar que **Altavista Propiedades** no es una página web estática o aislad
 
 ---
 
+## Dirección visual
+La demo pública usa una identidad boutique/editorial con paleta cálida, fondos profundos y componentes menos genéricos para diferenciarse de landings inmobiliarias tradicionales.
+
+---
+
 ## Frase Clave
 > *"Esto no es solo una página web inmobiliaria. Es una experiencia pública conectada a un panel de gestión comercial, donde cada consulta entra automáticamente como lead y puede ser gestionada por el equipo."*
 
@@ -30,12 +35,12 @@ graph TD
 ### Minuto 0:00 - 0:01 | 1. Introducción y Home
 *   **Acción:** Proyectar la página de inicio de **Altavista Propiedades** (`https://altavista-demo.baselogic.cl`).
 *   **Discurso:** 
-    > "Buenas tardes. Hoy quiero mostrarles cómo funciona el ecosistema digital de Altavista. Lo que ven en pantalla es el portal público de cara al cliente: una interfaz moderna, limpia y de diseño premium pensada para generar confianza inmediata. Pero lo realmente valioso no está en lo visual, sino en lo que ocurre por detrás..."
+    > "Buenas tardes. Hoy quiero mostrarles cómo funciona el ecosistema digital de Altavista. Lo que ven en pantalla es el portal público de cara al cliente: una experiencia boutique/editorial, cálida y premium, pensada para generar confianza inmediata. Pero lo realmente valioso no está solo en lo visual, sino en lo que ocurre por detrás..."
 
 ### Minuto 0:01 - 0:02 | 2. Catálogo y Búsqueda
 *   **Acción:** Hacer clic en **Propiedades** y navegar por el catálogo. Mostrar el uso de algún filtro rápido (ej: Comuna o Venta/Arriendo).
 *   **Discurso:**
-    > "Navegamos al catálogo. Como ven, el cliente puede filtrar propiedades de forma instantánea por comuna, operación o precio. Esta información no está cableada de manera estática: se consulta en tiempo real desde nuestra base de datos comercial. Si un asesor modifica un precio o sube una propiedad en el panel interno, el cambio se refleja de inmediato en esta web."
+    > "Navegamos al catálogo. El cliente puede filtrar propiedades de forma instantánea por comuna, operación o precio, dentro de una interfaz más cuidada que una ficha inmobiliaria genérica. Esta información no está cableada de manera estática: se consulta en tiempo real desde nuestra base de datos comercial. Si un asesor modifica un precio o sube una propiedad en el panel interno, el cambio se refleja de inmediato en esta web."
 
 ### Minuto 0:02 - 0:03 | 3. Detalle de Propiedad y Formulario de Interés
 *   **Acción:** Entrar al detalle de una propiedad (ej. *Moderna Casa en San Damián* o *Lo Curro*). Desplazarse brevemente por las características y la descripción.

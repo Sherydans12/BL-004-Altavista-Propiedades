@@ -86,19 +86,20 @@ export default function OwnerLeadForm() {
   };
 
   return (
-    <div className="bg-white border border-slate-100 rounded-3xl p-6 sm:p-10 shadow-lg shadow-slate-100/40 max-w-4xl mx-auto">
+    <div className="premium-panel max-w-4xl mx-auto p-6 sm:p-10">
       <div className="mb-8">
-        <h3 className="font-serif font-bold text-2xl text-slate-900 mb-2 text-center sm:text-left">Formulario de Captación</h3>
-        <p className="text-slate-500 font-light text-sm text-center sm:text-left">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#b77946] text-center sm:text-left">Evaluación inicial</p>
+        <h3 className="font-serif font-bold text-2xl text-[#17201f] mb-2 mt-2 text-center sm:text-left">Formulario de captación</h3>
+        <p className="text-[#5f6b65] font-light text-sm text-center sm:text-left">
           Ingresa los detalles básicos de tu propiedad y nuestro equipo comercial te contactará para una evaluación.
         </p>
       </div>
 
       {/* Success Alert */}
       {submitStatus === 'success' && (
-        <div className="mb-8 p-5 bg-teal-50 border border-teal-200 rounded-2xl text-teal-900 space-y-2">
-          <div className="flex items-center space-x-2 text-teal-800">
-            <CheckCircle2 className="w-6 h-6 text-teal-600 flex-shrink-0" />
+        <div className="mb-8 p-5 bg-[#f0f5ed] border border-[#8a9a87]/35 rounded-2xl text-[#17201f] space-y-2">
+          <div className="flex items-center space-x-2 text-[#0f3d3e]">
+            <CheckCircle2 className="w-6 h-6 text-[#0f3d3e] flex-shrink-0" />
             <strong className="text-base font-semibold">¡Datos recibidos con éxito!</strong>
           </div>
           <p className="text-sm font-light leading-relaxed">
@@ -121,15 +122,15 @@ export default function OwnerLeadForm() {
         
         {/* Section 1: Contact Info */}
         <div className="space-y-4">
-          <h4 className="text-xs font-semibold text-teal-800 uppercase tracking-widest border-b border-slate-50 pb-2">
+          <h4 className="text-xs font-semibold text-[#0f3d3e] uppercase tracking-widest border-b border-[#b8aa94]/30 pb-2">
             1. Información del Propietario
           </h4>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Name */}
             <div>
-              <label htmlFor="owner-name" className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1 flex items-center">
-                <User className="w-3.5 h-3.5 mr-1 text-slate-400" />
+              <label htmlFor="owner-name" className="block text-xs font-semibold text-[#5f6b65] uppercase tracking-wider mb-1 flex items-center">
+                <User className="w-3.5 h-3.5 mr-1 text-[#8a9a87]" />
                 Nombre Completo *
               </label>
               <input
@@ -139,14 +140,14 @@ export default function OwnerLeadForm() {
                 placeholder="Ej: Nicolás Fuentes"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-100 rounded-xl text-slate-800 text-sm focus:bg-white focus:ring-1 focus:ring-teal-700 focus:border-transparent outline-none transition-all"
+                className="field-premium"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label htmlFor="owner-email" className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1 flex items-center">
-                <Mail className="w-3.5 h-3.5 mr-1 text-slate-400" />
+              <label htmlFor="owner-email" className="block text-xs font-semibold text-[#5f6b65] uppercase tracking-wider mb-1 flex items-center">
+                <Mail className="w-3.5 h-3.5 mr-1 text-[#8a9a87]" />
                 Correo Electrónico *
               </label>
               <input
@@ -156,14 +157,14 @@ export default function OwnerLeadForm() {
                 placeholder="Ej: nicolas@ejemplo.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-100 rounded-xl text-slate-800 text-sm focus:bg-white focus:ring-1 focus:ring-teal-700 focus:border-transparent outline-none transition-all"
+                className="field-premium"
               />
             </div>
 
             {/* Phone */}
             <div>
-              <label htmlFor="owner-phone" className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1 flex items-center">
-                <Phone className="w-3.5 h-3.5 mr-1 text-slate-400" />
+              <label htmlFor="owner-phone" className="block text-xs font-semibold text-[#5f6b65] uppercase tracking-wider mb-1 flex items-center">
+                <Phone className="w-3.5 h-3.5 mr-1 text-[#8a9a87]" />
                 Teléfono *
               </label>
               <input
@@ -173,7 +174,7 @@ export default function OwnerLeadForm() {
                 placeholder="Ej: +56 9 8765 4321"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-100 rounded-xl text-slate-800 text-sm focus:bg-white focus:ring-1 focus:ring-teal-700 focus:border-transparent outline-none transition-all"
+                className="field-premium"
               />
             </div>
           </div>
@@ -181,22 +182,22 @@ export default function OwnerLeadForm() {
 
         {/* Section 2: Property Info */}
         <div className="space-y-4 pt-2">
-          <h4 className="text-xs font-semibold text-teal-800 uppercase tracking-widest border-b border-slate-50 pb-2">
+          <h4 className="text-xs font-semibold text-[#0f3d3e] uppercase tracking-widest border-b border-[#b8aa94]/30 pb-2">
             2. Detalles de la Propiedad
           </h4>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Operation Intent */}
             <div>
-              <label htmlFor="owner-intent" className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1 flex items-center">
-                <HelpCircle className="w-3.5 h-3.5 mr-1 text-slate-400" />
+              <label htmlFor="owner-intent" className="block text-xs font-semibold text-[#5f6b65] uppercase tracking-wider mb-1 flex items-center">
+                <HelpCircle className="w-3.5 h-3.5 mr-1 text-[#8a9a87]" />
                 ¿Qué deseas hacer? *
               </label>
               <select
                 id="owner-intent"
                 value={operationIntent}
                 onChange={(e) => setOperationIntent(e.target.value as 'venta' | 'arriendo' | 'ambos' | 'no_definido')}
-                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:bg-white focus:ring-1 focus:ring-teal-700 focus:border-transparent outline-none transition-all"
+                className="field-premium"
               >
                 <option value="venta">Vender</option>
                 <option value="arriendo">Arrendar</option>
@@ -207,15 +208,15 @@ export default function OwnerLeadForm() {
 
             {/* Property Type */}
             <div>
-              <label htmlFor="owner-property-type" className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1 flex items-center">
-                <Building2 className="w-3.5 h-3.5 mr-1 text-slate-400" />
+              <label htmlFor="owner-property-type" className="block text-xs font-semibold text-[#5f6b65] uppercase tracking-wider mb-1 flex items-center">
+                <Building2 className="w-3.5 h-3.5 mr-1 text-[#8a9a87]" />
                 Tipo de Propiedad *
               </label>
               <select
                 id="owner-property-type"
                 value={propertyType}
                 onChange={(e) => setPropertyType(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:bg-white focus:ring-1 focus:ring-teal-700 focus:border-transparent outline-none transition-all"
+                className="field-premium"
               >
                 <option value="casa">Casa</option>
                 <option value="departamento">Departamento</option>
@@ -229,8 +230,8 @@ export default function OwnerLeadForm() {
 
             {/* Comuna */}
             <div>
-              <label htmlFor="owner-comuna" className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1 flex items-center">
-                <MapPin className="w-3.5 h-3.5 mr-1 text-slate-400" />
+              <label htmlFor="owner-comuna" className="block text-xs font-semibold text-[#5f6b65] uppercase tracking-wider mb-1 flex items-center">
+                <MapPin className="w-3.5 h-3.5 mr-1 text-[#8a9a87]" />
                 Comuna *
               </label>
               <input
@@ -240,7 +241,7 @@ export default function OwnerLeadForm() {
                 placeholder="Ej: Las Condes"
                 value={propertyComuna}
                 onChange={(e) => setPropertyComuna(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-100 rounded-xl text-slate-800 text-sm focus:bg-white focus:ring-1 focus:ring-teal-700 focus:border-transparent outline-none transition-all"
+                className="field-premium"
               />
             </div>
           </div>
@@ -248,8 +249,8 @@ export default function OwnerLeadForm() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Address */}
             <div>
-              <label htmlFor="owner-address" className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1 flex items-center">
-                <MapPin className="w-3.5 h-3.5 mr-1 text-slate-400" />
+              <label htmlFor="owner-address" className="block text-xs font-semibold text-[#5f6b65] uppercase tracking-wider mb-1 flex items-center">
+                <MapPin className="w-3.5 h-3.5 mr-1 text-[#8a9a87]" />
                 Dirección o Sector Aproximado
               </label>
               <input
@@ -258,14 +259,14 @@ export default function OwnerLeadForm() {
                 placeholder="Ej: Sector El Golf / Av. Apoquindo 3000"
                 value={propertyAddress}
                 onChange={(e) => setPropertyAddress(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-100 rounded-xl text-slate-800 text-sm focus:bg-white focus:ring-1 focus:ring-teal-700 focus:border-transparent outline-none transition-all"
+                className="field-premium"
               />
             </div>
 
             {/* Estimated Price */}
             <div>
-              <label htmlFor="owner-price" className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1 flex items-center">
-                <DollarSign className="w-3.5 h-3.5 mr-1 text-slate-400" />
+              <label htmlFor="owner-price" className="block text-xs font-semibold text-[#5f6b65] uppercase tracking-wider mb-1 flex items-center">
+                <DollarSign className="w-3.5 h-3.5 mr-1 text-[#8a9a87]" />
                 Precio Estimado (Opcional en CLP o UF)
               </label>
               <input
@@ -274,7 +275,7 @@ export default function OwnerLeadForm() {
                 placeholder="Ej: 850000000"
                 value={estimatedPrice}
                 onChange={(e) => setEstimatedPrice(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-100 rounded-xl text-slate-800 text-sm focus:bg-white focus:ring-1 focus:ring-teal-700 focus:border-transparent outline-none transition-all"
+                className="field-premium"
               />
             </div>
           </div>
@@ -282,22 +283,22 @@ export default function OwnerLeadForm() {
 
         {/* Section 3: Contact details & comments */}
         <div className="space-y-4 pt-2">
-          <h4 className="text-xs font-semibold text-teal-800 uppercase tracking-widest border-b border-slate-50 pb-2">
+          <h4 className="text-xs font-semibold text-[#0f3d3e] uppercase tracking-widest border-b border-[#b8aa94]/30 pb-2">
             3. Preferencias de Contacto
           </h4>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Preferred Contact Method */}
             <div className="md:col-span-1">
-              <label htmlFor="owner-preferred-method" className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1 flex items-center">
-                <Phone className="w-3.5 h-3.5 mr-1 text-slate-400" />
+              <label htmlFor="owner-preferred-method" className="block text-xs font-semibold text-[#5f6b65] uppercase tracking-wider mb-1 flex items-center">
+                <Phone className="w-3.5 h-3.5 mr-1 text-[#8a9a87]" />
                 Método Preferido *
               </label>
               <select
                 id="owner-preferred-method"
                 value={preferredContactMethod}
                 onChange={(e) => setPreferredContactMethod(e.target.value as 'telefono' | 'email' | 'whatsapp')}
-                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:bg-white focus:ring-1 focus:ring-teal-700 focus:border-transparent outline-none transition-all"
+                className="field-premium"
               >
                 <option value="whatsapp">WhatsApp</option>
                 <option value="telefono">Teléfono</option>
@@ -307,8 +308,8 @@ export default function OwnerLeadForm() {
 
             {/* Message */}
             <div className="md:col-span-2">
-              <label htmlFor="owner-msg" className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1 flex items-center">
-                <MessageSquare className="w-3.5 h-3.5 mr-1 text-slate-400" />
+              <label htmlFor="owner-msg" className="block text-xs font-semibold text-[#5f6b65] uppercase tracking-wider mb-1 flex items-center">
+                <MessageSquare className="w-3.5 h-3.5 mr-1 text-[#8a9a87]" />
                 Mensaje o Comentarios Adicionales
               </label>
               <textarea
@@ -317,18 +318,18 @@ export default function OwnerLeadForm() {
                 placeholder="Cuéntanos más detalles de tu propiedad (dormitorios, estado, etc.)..."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full px-3.5 py-2 bg-slate-50 border border-slate-100 rounded-xl text-slate-800 text-sm focus:bg-white focus:ring-1 focus:ring-teal-700 focus:border-transparent outline-none transition-all resize-none"
+                className="field-premium resize-none"
               />
             </div>
           </div>
         </div>
 
         {/* Submit button */}
-        <div className="pt-4 border-t border-slate-50 flex justify-end">
+        <div className="pt-4 border-t border-[#b8aa94]/30 flex justify-end">
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full sm:w-auto min-w-[200px] py-3.5 px-6 rounded-xl text-sm font-semibold text-white bg-teal-800 hover:bg-teal-900 transition-all duration-200 shadow-md hover:shadow-lg active:scale-[0.98] disabled:opacity-50 flex items-center justify-center cursor-pointer"
+            className="btn-primary w-full sm:w-auto min-w-[200px] cursor-pointer disabled:opacity-50"
           >
             {isSubmitting ? (
               <span className="inline-flex items-center">

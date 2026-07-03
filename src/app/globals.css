@@ -1,8 +1,123 @@
 @import "tailwindcss";
 
 @layer base {
+  :root {
+    --color-deep: #0f3d3e;
+    --color-deep-night: #102a2a;
+    --color-graphite: #1f2933;
+    --color-ink: #17201f;
+    --color-muted: #5f6b65;
+    --color-paper: #f4efe6;
+    --color-bone: #efe7d8;
+    --color-sand: #d8c7a3;
+    --color-stone: #b8aa94;
+    --color-copper: #b77946;
+    --color-amber-soft: #c89b3c;
+    --color-terracotta: #9c5a3c;
+    --color-sage: #8a9a87;
+  }
+
   body {
-    @apply antialiased text-slate-800 bg-slate-50/30;
+    @apply antialiased;
+    color: var(--color-ink);
+    background:
+      radial-gradient(circle at top left, rgba(183, 121, 70, 0.13), transparent 32rem),
+      radial-gradient(circle at 85% 18%, rgba(15, 61, 62, 0.08), transparent 34rem),
+      linear-gradient(180deg, var(--color-paper) 0%, #f8f2e8 44%, var(--color-bone) 100%);
+  }
+
+  ::selection {
+    background: rgba(183, 121, 70, 0.28);
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  .editorial-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .bg-paper {
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.34), rgba(244, 239, 230, 0.72)),
+      var(--color-paper);
+  }
+
+  .bg-deep {
+    background:
+      radial-gradient(circle at 18% 12%, rgba(200, 155, 60, 0.18), transparent 26rem),
+      linear-gradient(135deg, var(--color-deep-night), var(--color-deep));
+  }
+
+  .texture-grain {
+    position: relative;
+  }
+
+  .texture-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.36;
+    background-image:
+      radial-gradient(rgba(31, 41, 51, 0.08) 0.7px, transparent 0.7px),
+      radial-gradient(rgba(183, 121, 70, 0.08) 0.6px, transparent 0.6px);
+    background-position: 0 0, 12px 12px;
+    background-size: 24px 24px;
+    mix-blend-mode: multiply;
+  }
+
+  .premium-border {
+    border-color: rgba(184, 170, 148, 0.48);
+  }
+
+  .premium-panel {
+    @apply rounded-2xl border shadow-sm;
+    background: rgba(247, 240, 230, 0.78);
+    border-color: rgba(184, 170, 148, 0.45);
+    box-shadow: 0 24px 60px rgba(31, 41, 51, 0.08);
+  }
+
+  .editorial-badge {
+    @apply inline-flex items-center rounded-full px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.22em];
+    color: var(--color-deep);
+    background: rgba(216, 199, 163, 0.38);
+    border: 1px solid rgba(183, 121, 70, 0.22);
+  }
+
+  .field-premium {
+    @apply w-full rounded-xl border px-3.5 py-2.5 text-sm outline-none transition-all;
+    color: var(--color-ink);
+    background: rgba(255, 252, 247, 0.78);
+    border-color: rgba(184, 170, 148, 0.55);
+  }
+
+  .field-premium:focus {
+    background: #fffaf2;
+    border-color: var(--color-copper);
+    box-shadow: 0 0 0 3px rgba(183, 121, 70, 0.16);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold text-white transition-all duration-200;
+    background: var(--color-deep);
+    box-shadow: 0 14px 30px rgba(15, 61, 62, 0.18);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-deep-night);
+    transform: translateY(-1px);
+  }
+
+  .btn-copper {
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold text-white transition-all duration-200;
+    background: var(--color-copper);
+    box-shadow: 0 14px 30px rgba(183, 121, 70, 0.2);
+  }
+
+  .btn-copper:hover {
+    background: var(--color-terracotta);
+    transform: translateY(-1px);
   }
 }
 
@@ -12,7 +127,7 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid var(--color-teal-600);
+  outline: 2px solid var(--color-copper);
   outline-offset: 2px;
 }
 
@@ -23,14 +138,14 @@ textarea:focus-visible {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #efe7d8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #b8aa94;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #8a9a87;
 }

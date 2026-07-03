@@ -21,16 +21,20 @@ export default function HomeSearch() {
   };
 
   return (
-    <div className="w-full max-w-4xl bg-white rounded-3xl shadow-xl shadow-slate-100/80 border border-slate-100 p-6 sm:p-8 animate-fade-in">
-      {/* Operation Tabs */}
-      <div className="flex border-b border-slate-100 pb-4 mb-6">
+    <div className="w-full max-w-5xl premium-panel p-4 sm:p-5 lg:p-6 animate-fade-in">
+      <div className="flex flex-col gap-4 border-b border-[#b8aa94]/30 pb-4 mb-5 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#b77946]">Búsqueda curada</p>
+          <p className="mt-1 text-sm text-[#5f6b65]">Filtra por intención, comuna y tipo de propiedad.</p>
+        </div>
+        <div className="flex rounded-full border border-[#b8aa94]/40 bg-[#efe7d8]/55 p-1">
         <button
           type="button"
           onClick={() => setOperation('venta')}
-          className={`pb-2 px-4 text-sm font-semibold tracking-wider uppercase border-b-2 transition-all mr-6 ${
+          className={`rounded-full px-4 py-2 text-xs font-semibold tracking-[0.18em] uppercase transition-all ${
             operation === 'venta'
-              ? 'border-amber-500 text-teal-900'
-              : 'border-transparent text-slate-400 hover:text-slate-600'
+              ? 'bg-[#b77946] text-white shadow-sm'
+              : 'text-[#5f6b65] hover:text-[#0f3d3e]'
           }`}
         >
           Comprar
@@ -38,28 +42,29 @@ export default function HomeSearch() {
         <button
           type="button"
           onClick={() => setOperation('arriendo')}
-          className={`pb-2 px-4 text-sm font-semibold tracking-wider uppercase border-b-2 transition-all ${
+          className={`rounded-full px-4 py-2 text-xs font-semibold tracking-[0.18em] uppercase transition-all ${
             operation === 'arriendo'
-              ? 'border-teal-800 text-teal-900'
-              : 'border-transparent text-slate-400 hover:text-slate-600'
+              ? 'bg-[#0f3d3e] text-white shadow-sm'
+              : 'text-[#5f6b65] hover:text-[#0f3d3e]'
           }`}
         >
           Arrendar
         </button>
+        </div>
       </div>
 
       <form onSubmit={handleSearch} className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
         {/* Comuna Selection */}
         <div className="flex flex-col">
-          <label htmlFor="comuna" className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 flex items-center">
-            <MapPin className="w-3.5 h-3.5 mr-1 text-slate-400" />
+          <label htmlFor="comuna" className="text-xs font-semibold text-[#5f6b65] uppercase tracking-[0.18em] mb-2 flex items-center">
+            <MapPin className="w-3.5 h-3.5 mr-1 text-[#8a9a87]" />
             Ubicación / Comuna
           </label>
           <select
             id="comuna"
             value={comuna}
             onChange={(e) => setComuna(e.target.value)}
-            className="w-full px-4 py-3 bg-slate-50 border border-slate-100 rounded-xl text-slate-700 text-sm focus:bg-white focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-all outline-none"
+            className="field-premium px-4 py-3"
           >
             <option value="">Todas las comunas</option>
             <option value="Las Condes">Las Condes</option>
@@ -74,15 +79,15 @@ export default function HomeSearch() {
 
         {/* Property Type Selection */}
         <div className="flex flex-col">
-          <label htmlFor="type" className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 flex items-center">
-            <Building2 className="w-3.5 h-3.5 mr-1 text-slate-400" />
+          <label htmlFor="type" className="text-xs font-semibold text-[#5f6b65] uppercase tracking-[0.18em] mb-2 flex items-center">
+            <Building2 className="w-3.5 h-3.5 mr-1 text-[#8a9a87]" />
             Tipo de Propiedad
           </label>
           <select
             id="type"
             value={type}
             onChange={(e) => setType(e.target.value)}
-            className="w-full px-4 py-3 bg-slate-50 border border-slate-100 rounded-xl text-slate-700 text-sm focus:bg-white focus:ring-2 focus:ring-teal-600 focus:border-transparent transition-all outline-none"
+            className="field-premium px-4 py-3"
           >
             <option value="">Todos los tipos</option>
             <option value="casa">Casa</option>
@@ -98,7 +103,7 @@ export default function HomeSearch() {
         <div>
           <button
             type="submit"
-            className="w-full bg-teal-800 hover:bg-teal-900 text-white font-semibold py-3 px-6 rounded-xl shadow-md shadow-teal-900/10 hover:shadow-lg transition-all flex items-center justify-center cursor-pointer"
+            className="btn-primary w-full py-3 cursor-pointer"
           >
             <Search className="w-4 h-4 mr-2" />
             Buscar propiedades
