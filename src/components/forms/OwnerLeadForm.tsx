@@ -75,11 +75,11 @@ export default function OwnerLeadForm() {
         setPreferredContactMethod('whatsapp');
       } else {
         setSubmitStatus('error');
-        setErrorMessage(response.error || 'Ocurrió un error al enviar el formulario.');
+        setErrorMessage('No pudimos enviar tu consulta. Intenta nuevamente en unos minutos o contáctanos por WhatsApp.');
       }
     } catch {
       setSubmitStatus('error');
-      setErrorMessage('Error de conexión con el servidor. Por favor intenta de nuevo.');
+      setErrorMessage('No pudimos enviar tu consulta. Intenta nuevamente en unos minutos o contáctanos por WhatsApp.');
     } finally {
       setIsSubmitting(false);
     }

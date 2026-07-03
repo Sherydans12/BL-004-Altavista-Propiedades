@@ -84,7 +84,7 @@ export default function PropertiesListClient({ initialProperties, isOffline }: P
           <div className="flex items-center space-x-2">
             <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse flex-shrink-0" />
             <span>
-              <strong>Modo offline:</strong> No se pudo conectar con el servidor InmoDesk. Mostrando catálogo ficticio de respaldo.
+              Mostrando catálogo referencial
             </span>
           </div>
         </div>

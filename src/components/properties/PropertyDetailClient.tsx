@@ -86,11 +86,11 @@ export default function PropertyDetailClient({ property, isOffline }: PropertyDe
         setMessage(`Hola, me interesa recibir más información sobre la propiedad "${property.title}" (${property.comuna}).`);
       } else {
         setSubmitStatus('error');
-        setErrorMessage(response.error || 'No se pudo enviar el formulario.');
+        setErrorMessage('No pudimos enviar tu consulta. Intenta nuevamente en unos minutos o contáctanos por WhatsApp.');
       }
     } catch {
       setSubmitStatus('error');
-      setErrorMessage('Error de conexión con el servidor. Por favor intenta de nuevo.');
+      setErrorMessage('No pudimos enviar tu consulta. Intenta nuevamente en unos minutos o contáctanos por WhatsApp.');
     } finally {
       setIsSubmitting(false);
     }
@@ -118,7 +118,7 @@ export default function PropertyDetailClient({ property, isOffline }: PropertyDe
         <div className="mb-8 p-4 bg-amber-50 border border-amber-200 rounded-2xl text-amber-800 text-sm flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse flex-shrink-0" />
           <span>
-            <strong>Modo offline:</strong> Estás visualizando una propiedad de respaldo. Si envías el formulario, intentará conectar con el servidor local.
+            Mostrando información referencial de la propiedad
           </span>
         </div>
       )}
@@ -283,7 +283,7 @@ export default function PropertyDetailClient({ property, isOffline }: PropertyDe
                   <strong className="text-sm">¡Mensaje enviado con éxito!</strong>
                 </div>
                 <p className="text-xs font-light">
-                  El lead ha sido enviado exitosamente al CRM InmoDesk. Te contactaremos pronto.
+                  Tu consulta fue recibida. Un asesor de Altavista te contactará pronto.
                 </p>
               </div>
             )}

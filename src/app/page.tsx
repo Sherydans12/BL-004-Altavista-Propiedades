@@ -29,21 +29,16 @@ export default async function Home() {
     <div className="bg-slate-50/20">
       
       {/* API Connection Indicator Banner */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
-        <div className="flex justify-end">
-          {isApiOffline ? (
+      {isApiOffline && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+          <div className="flex justify-end">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-              Modo Demo Offline (Servidor InmoDesk inactivo)
+              <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
+              Mostrando catálogo referencial
             </div>
-          ) : (
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-teal-50 text-teal-800 border border-teal-200 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              Conectado a InmoDesk API (Demo Live)
-            </div>
-          )}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Hero Section */}
       <section className="relative pt-12 pb-24 md:pt-20 md:pb-32 overflow-hidden">
@@ -182,7 +177,7 @@ export default async function Home() {
                 Para Propietarios
               </span>
               <h2 className="text-3xl sm:text-4xl font-serif font-bold leading-tight">
-                ¿Buscas vender o arrendar tu propiedad al mejor precio?
+                ¿Buscas vender o arrendar tu propiedad a un precio competitivo?
               </h2>
               <p className="text-teal-200/80 font-light text-base leading-relaxed max-w-xl">
                 Te acompañamos en todo el proceso: desde la valorización comercial y sesión fotográfica profesional, hasta el cierre legal del contrato. Tu tranquilidad es nuestro principal pilar.
@@ -262,7 +257,7 @@ export default async function Home() {
               </div>
               <h3 className="font-serif font-bold text-xl text-slate-900">Gestión Ágil</h3>
               <p className="text-slate-500 text-sm font-light leading-relaxed max-w-xs mx-auto">
-                Aprovechamos las herramientas de InmoDesk para acelerar la publicación, calificar prospectos al instante y coordinar visitas eficientemente.
+                Aprovechamos herramientas digitales avanzadas para acelerar la publicación, calificar interesados al instante y coordinar visitas eficientemente.
               </p>
             </div>
           </div>

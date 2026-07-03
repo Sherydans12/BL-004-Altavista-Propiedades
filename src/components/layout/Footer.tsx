@@ -112,7 +112,7 @@ export default function Footer() {
               </a>
             </div>
             <p className="text-xs text-slate-500 font-light">
-              Demo pública conectada a InmoDesk SaaS API.
+              Altavista Propiedades — Corredora boutique de Santiago.
             </p>
           </div>
 
@@ -121,7 +121,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
           <p>&copy; {currentYear} Altavista Propiedades. Todos los derechos reservados.</p>
           <p className="mt-2 md:mt-0 font-medium">
-            Desarrollado para demostración de pipeline de venta y leads.
+            Servicio integral y asesoría personalizada.
           </p>
         </div>
       </div>

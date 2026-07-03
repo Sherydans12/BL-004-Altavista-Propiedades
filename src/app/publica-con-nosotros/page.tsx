@@ -12,7 +12,7 @@ import OwnerLeadForm from '@/components/forms/OwnerLeadForm';
 
 export const metadata = {
   title: 'Publica tu Propiedad | Altavista Propiedades',
-  description: 'Vende o arrienda tu propiedad de forma rápida, segura y al mejor precio con nuestro servicio de corretaje premium.',
+  description: 'Vende o arrienda tu propiedad de forma rápida, segura y a un precio competitivo con nuestro servicio de corretaje premium.',
 };
 
 export default function PublicaConNosotrosPage() {
@@ -41,7 +41,7 @@ export default function PublicaConNosotrosPage() {
     {
       icon: Scale,
       title: '5. Cierre Legal Seguro',
-      description: 'Redactamos las promesas de compraventa o contratos de arriendo a través de nuestro equipo legal para garantizar una transacción transparente.'
+      description: 'Redactamos las promesas de compraventa o contratos de arriendo a través de nuestro equipo legal para ayudar a resguardar una transacción transparente.'
     }
   ];
 
@@ -57,10 +57,10 @@ export default function PublicaConNosotrosPage() {
               Vende o Arrienda con Expertos
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold leading-tight">
-              Nos encargamos de todo. Tú solo recibe el pago.
+              Nos encargamos de todo. Nosotros te acompañamos en el proceso.
             </h1>
             <p className="text-teal-100/80 font-light text-base sm:text-lg leading-relaxed">
-              En Altavista Propiedades transformamos el corretaje tradicional en una experiencia premium libre de estrés. Descubre por qué cientos de propietarios confían en nosotros.
+              En Altavista Propiedades transformamos el corretaje tradicional en una experiencia premium libre de estrés. Descubre por qué los propietarios eligen gestionar sus inmuebles con nosotros.
             </p>
             <div className="pt-2">
               <a
