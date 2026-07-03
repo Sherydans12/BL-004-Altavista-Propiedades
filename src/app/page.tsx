@@ -34,7 +34,7 @@ export default async function Home() {
     ['01', 'Publicación cuidada', 'Fotografía, orden visual y descripciones con foco comercial para que cada propiedad se perciba mejor.'],
     ['02', 'Seguimiento comercial', 'Reportes claros de interesados, visitas y señales reales de mercado durante el proceso.'],
     ['03', 'Visitas coordinadas', 'Agenda ordenada, filtros previos y acompañamiento cercano para proteger tu tiempo.'],
-    ['04', 'Información centralizada', 'Datos, formularios y trazabilidad conectados a InmoDesk sin fricción para el equipo comercial.'],
+    ['04', 'Información centralizada', 'Datos, formularios y trazabilidad conectados a la gestión comercial sin fricción para el equipo.'],
   ];
 
   const processItems = [
@@ -51,7 +51,7 @@ export default async function Home() {
           <div className="flex justify-end">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#c89b3c]/35 bg-[#fff7df] px-3 py-1.5 text-xs font-semibold text-[#7b4a21] shadow-sm">
               <span className="w-2.5 h-2.5 rounded-full bg-[#c89b3c] animate-pulse" />
-              Mostrando catálogo referencial
+              Mostrando selección disponible
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@ export default async function Home() {
                 </div>
                 <div>
                   <p className="font-serif text-2xl text-[#f7f0e6]">CRM</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.18em]">InmoDesk</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.18em]">Gestión</p>
                 </div>
               </div>
             </div>
@@ -115,7 +115,7 @@ export default async function Home() {
                 </div>
                 <div className="absolute -bottom-5 right-4 max-w-[15rem] rounded-2xl border border-[#d8c7a3]/35 bg-[#f4efe6]/92 p-4 text-[#17201f] shadow-xl backdrop-blur">
                   <p className="text-[11px] uppercase tracking-[0.24em] text-[#b77946]">Nº 004</p>
-                  <p className="mt-2 font-serif text-xl leading-tight">Catálogo boutique conectado a InmoDesk.</p>
+                  <p className="mt-2 font-serif text-xl leading-tight">Catálogo boutique conectado a tu gestión comercial.</p>
                 </div>
               </div>
             </div>

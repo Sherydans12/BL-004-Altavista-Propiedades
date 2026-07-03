@@ -57,7 +57,7 @@ Desde la carpeta raíz del proyecto **BL-004-Altavista-Propiedades**:
 Antes de iniciar la reunión, corrobora la conectividad haciendo las siguientes consultas rápidas:
 
 1. **Prueba API Directa**: Abre [http://localhost:3000/api/public/demo/properties](http://localhost:3000/api/public/demo/properties) en tu navegador. Debe devolver un arreglo JSON con las propiedades activas.
-2. **Prueba del Portal**: Abre [http://localhost:3005/propiedades](http://localhost:3005/propiedades). Debe cargar el catálogo desde InmoDesk. Si se visualiza el aviso *"Mostrando catálogo referencial"*, significa que Altavista no está logrando establecer contacto con la dirección configurada en las variables de entorno.
+2. **Prueba del Portal**: Abre [http://localhost:3005/propiedades](http://localhost:3005/propiedades). Debe cargar el catálogo desde InmoDesk. Si se visualiza el aviso *"Mostrando selección disponible"*, significa que Altavista no está logrando establecer contacto con la dirección configurada en las variables de entorno.
 
 ## Dirección visual
 
@@ -120,7 +120,7 @@ Sigue esta secuencia para demostrar el valor integrado del ecosistema:
 * [ ] InmoDesk iniciado y escuchando activamente en `http://localhost:3000`.
 * [ ] Altavista Propiedades iniciado y escuchando en `http://localhost:3005`.
 * [ ] El endpoint `http://localhost:3000/api/public/demo/properties` responde con JSON.
-* [ ] Altavista carga propiedades reales sin mostrar el aviso **"Mostrando catálogo referencial"**.
+* [ ] Altavista carga propiedades reales sin mostrar el aviso **"Mostrando selección disponible"**.
 * [ ] Se realiza una prueba previa de envío de lead en Altavista y se confirma su aparición en el tablero Pipeline de InmoDesk.
 
 ---

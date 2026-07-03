@@ -116,7 +116,7 @@ export default function PropertyDetailClient({ property, isOffline }: PropertyDe
         <div className="mb-8 p-4 bg-[#fff7df] border border-[#c89b3c]/35 rounded-2xl text-[#7b4a21] text-sm flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-[#c89b3c] animate-pulse flex-shrink-0" />
           <span>
-            Mostrando información referencial de la propiedad
+            Mostrando información disponible de la propiedad
           </span>
         </div>
       )}

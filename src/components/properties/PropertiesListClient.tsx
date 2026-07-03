@@ -83,7 +83,7 @@ export default function PropertiesListClient({ initialProperties, isOffline }: P
           <div className="flex items-center space-x-2">
             <span className="w-2.5 h-2.5 rounded-full bg-[#c89b3c] animate-pulse flex-shrink-0" />
             <span>
-              Mostrando catálogo referencial
+              Mostrando selección disponible
             </span>
           </div>
         </div>
